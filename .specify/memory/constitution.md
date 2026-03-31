@@ -1,3 +1,20 @@
+<!--
+Sync Impact Report
+Version change: 1.1.1 -> 1.2.0
+Modified principles:
+- Nenhum principio central foi renomeado; as regras de qualidade passaram a exigir validacao manual em vez de expectativa de testes automatizados.
+Added sections:
+- Politica de Validacao Sem Testes Automatizados
+Removed sections:
+- Nenhuma
+Templates requiring updates:
+- ✅ updated /home/lucas/projetos/space-ark/.specify/templates/plan-template.md
+- ✅ updated /home/lucas/projetos/space-ark/.specify/templates/spec-template.md
+- ✅ updated /home/lucas/projetos/space-ark/.specify/templates/tasks-template.md
+Follow-up TODOs:
+- Nenhum
+-->
+
 # Space Ark - Constituição do Produto
 
 ## Princípios Centrais
@@ -57,16 +74,26 @@ A interface deve ser minimalista, rápida e silenciosa, com foco total em memori
 
 - Código deve privilegiar legibilidade, previsibilidade e baixo acoplamento.
 - Regras de repetição espaçada não podem ficar espalhadas em componentes de UI.
-- Toda feature que afete cards, histórico ou agendamento deve ser testável de forma isolada.
+- Toda feature que afete cards, histórico ou agendamento deve ser validável de forma isolada.
 - Mudanças em persistência e sync devem considerar comportamento offline antes de considerar conveniência de implementação.
 - A camada de integração com Firebase deve ser substituível e não pode contaminar a lógica central de revisão.
 - Novas funcionalidades não devem degradar a velocidade do fluxo principal de revisão.
+
+## Política de Validação Sem Testes Automatizados
+
+- Este projeto não adota testes automatizados como requisito de desenvolvimento.
+- Toda entrega deve incluir uma estratégia explícita de validação manual com passos reproduzíveis.
+- Critérios de aceite devem poder ser verificados por execução local, navegação real e inspeção funcional do fluxo afetado.
+- Mudanças em domínio, persistência local, sincronização e navegação exigem evidência de validação manual antes de serem consideradas concluídas.
+- Ausência de testes automatizados não autoriza lógica obscura, alto acoplamento ou mudanças sem roteiro de verificação.
 
 ## Governança
 
 - Esta constituição tem precedência sobre decisões locais de implementação.
 - Toda mudança que afete modelo de dados, algoritmo de revisão ou experiência principal de estudo deve ser avaliada contra os princípios centrais.
 - Se uma decisão aproximar o produto do Anki em clareza, previsibilidade e eficiência de revisão, ela tem prioridade sobre alternativas mais vistosas ou mais simples de construir.
-- Exceções devem ser documentadas com justificativa técnica e impacto em migração, histórico e UX.
+- Exceções devem ser documentadas com justificativa técnica e impacto em migração, histórico, UX e validação manual.
+- A política de versionamento desta constituição segue SemVer: PATCH para clarificações, MINOR para novas diretrizes ou expansão material e MAJOR para remoção ou redefinição incompatível de princípios.
+- Toda revisão de feature, plano ou tarefa deve confirmar aderência à política de validação vigente.
 
-**Versão**: 1.1.1 | **Ratificada em**: 2026-03-31 | **Última alteração**: 2026-03-31
+**Versão**: 1.2.0 | **Ratificada em**: 2026-03-31 | **Última alteração**: 2026-03-31
