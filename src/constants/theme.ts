@@ -1,65 +1,70 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
+export const colors = {
+  // Background colors
+  background: "#0a0e1a",
+  backgroundSecondary: "#111827",
+  backgroundTertiary: "#1f2937",
 
-import '@/global.css';
+  // Primary - Cyan/Teal
+  primary: "#06b6d4",
+  primaryLight: "#22d3ee",
+  primaryDark: "#0891b2",
 
-import { Platform } from 'react-native';
+  // Accent - Green
+  accent: "#10b981",
+  accentLight: "#34d399",
 
-export const Colors = {
-  light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
-  },
-  dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
-  },
-} as const;
+  // Warning - Amber
+  warning: "#f59e0b",
+  warningLight: "#fbbf24",
 
-export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
+  // Error - Red
+  error: "#ef4444",
+  errorLight: "#f87171",
 
-export const Fonts = Platform.select({
-  ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
-    sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
-    serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
-    rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
-    mono: 'ui-monospace',
-  },
-  default: {
-    sans: 'normal',
-    serif: 'serif',
-    rounded: 'normal',
-    mono: 'monospace',
-  },
-  web: {
-    sans: 'var(--font-display)',
-    serif: 'var(--font-serif)',
-    rounded: 'var(--font-rounded)',
-    mono: 'var(--font-mono)',
-  },
-});
+  // Text
+  textPrimary: "#f9fafb",
+  textSecondary: "#9ca3af",
+  textMuted: "#6b7280",
 
-export const Spacing = {
-  half: 2,
-  one: 4,
-  two: 8,
-  three: 16,
-  four: 24,
-  five: 32,
-  six: 64,
-} as const;
+  // Border
+  border: "#374151",
+  borderLight: "#4b5563",
 
-export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
-export const MaxContentWidth = 800;
+  // Card
+  card: "#1f2937",
+  cardHover: "#374151",
+
+  // Stars overlay
+  starLight: "rgba(255, 255, 255, 0.1)",
+};
+
+export const spacing = {
+  xs: 4,
+  sm: 8,
+  md: 12,
+  lg: 16,
+  xl: 20,
+  "2xl": 24,
+  "3xl": 32,
+  "4xl": 40,
+};
+
+export const borderRadius = {
+  sm: 4,
+  md: 8,
+  lg: 12,
+  xl: 16,
+  "2xl": 20,
+  full: 9999,
+};
+
+export const fontSize = {
+  xs: 12,
+  sm: 14,
+  base: 16,
+  lg: 18,
+  xl: 20,
+  "2xl": 24,
+  "3xl": 30,
+  "4xl": 36,
+};
